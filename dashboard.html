@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Medicine Reminder</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <h1 class="logo">💊 MedRemind</h1>
+        <div class="nav-links">
+            <a href="dashboard.html" class="active">Dashboard</a>
+            <a href="about.html">About</a>
+            <button onclick="logout()" class="btn outline-btn">Logout</button>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header class="page-header">
+            <h2>Your Daily Schedule</h2>
+            <p>Never miss a dose again.</p>
+        </header>
+
+        <div class="dashboard-grid">
+            <!-- Add Medicine Form -->
+            <div class="card form-card">
+                <h3>Add New Medicine</h3>
+                <form id="addMedicineForm" onsubmit="addMedicine(event)">
+                    <div class="input-group">
+                        <label for="medName">Medicine Name</label>
+                        <input type="text" id="medName" placeholder="e.g., Paracetamol" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="medDosage">Dosage</label>
+                        <input type="text" id="medDosage" placeholder="e.g., 1 Tablet (500mg)" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="medTime">Time</label>
+                        <input type="time" id="medTime" required>
+                    </div>
+                    <button type="submit" class="btn primary-btn">➕ Add Reminder</button>
+                </form>
+            </div>
+
+            <!-- Medicine List -->
+            <div class="card list-card">
+                <h3>Upcoming Reminders</h3>
+                <ul id="medicineList" class="medicine-list">
+                    <!-- Default mock item -->
+                    <li class="medicine-item">
+                        <div class="med-info">
+                            <span class="med-icon">💊</span>
+                            <div>
+                                <h4>Vitamin C</h4>
+                                <p>1 Tablet - After Breakfast</p>
+                            </div>
+                        </div>
+                        <div class="med-time">09:00 AM</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
